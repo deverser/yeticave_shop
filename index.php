@@ -1,8 +1,17 @@
 <?php
 $is_auth = (bool) rand(0, 1);
 
-$user_name = 'Константин';
+$user_name = 'Александр';
 $user_avatar = 'img/user.jpg';
+$categories = array('Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное');
+$goods = array(
+        'id_1'=>array('name'=>'2014 Rossignol District Snowboard', 'category'=>'Доски и лыжи', 'price'=> 10990, 'img'=>'img/lot-1.jpg'),
+         'id_2'=>array('name'=>'DC Ply Mens 2016/2017 Snowboard', 'category'=>'Доски и лыжи', 'price'=> 159999, 'img'=>'img/lot-2.jpg'),
+          'id_3'=>array('name'=>'Крепления Union Contact Pro 2015 года размер L/XL', 'category'=>'Крепления', 'price'=> 8000, 'img'=>'img/lot-3.jpg'),
+          'id_4'=>array('name'=>'Ботинки для сноуборда DC Mutiny Charcoal', 'category'=>'Ботинки', 'price'=> 10999, 'img'=>'img/lot-4.jpg'),
+          'id_5'=>array('name'=>'Куртка для сноуборда DC Mutiny Charcoal', 'category'=>'Одежда', 'price'=> 7500, 'img'=>'img/lot-5.jpg'),
+          'id_6'=>array('name'=>'Маска Oakley Canopy', 'category'=>'Разное', 'price'=> 5400, 'img'=>'img/lot-6.jpg'),);
+ 
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -46,7 +55,6 @@ $user_avatar = 'img/user.jpg';
                 </li>
             </ul>
             <?php endif; ?>
-
         </nav>
     </div>
 </header>
@@ -79,15 +87,6 @@ $user_avatar = 'img/user.jpg';
     <section class="lots">
         <div class="lots__header">
             <h2>Открытые лоты</h2>
-            <select class="lots__select">
-                <option>Все категории</option>
-                <option>Доски и лыжи</option>
-                <option>Крепления</option>
-                <option>Ботинки</option>
-                <option>Одежда</option>
-                <option>Инструменты</option>
-                <option>Разное</option>
-            </select>
         </div>
         <ul class="lots__list">
             <li class="lots__item lot">
@@ -103,7 +102,7 @@ $user_avatar = 'img/user.jpg';
                             <span class="lot__cost">10 999<b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
-                            16:54:12
+
                         </div>
                     </div>
                 </div>
@@ -137,7 +136,7 @@ $user_avatar = 'img/user.jpg';
     </nav>
     <div class="main-footer__bottom container">
         <div class="main-footer__copyright">
-            <p>© 2017, YetiCave</p>
+            <p>© 2018, YetiCave</p>
             <p>Интернет-аукцион сноубордического и горнолыжного снаряжения</p>
         </div>
         <div class="main-footer__social social">
