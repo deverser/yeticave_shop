@@ -35,7 +35,17 @@ $goods = array(
                         'price'=> 5400,
                         'img'=>'img/lot-6.jpg')
                 );
- 
+ // функция для вывода цены товара в отформатированном виде
+ function priceFormat($price) {
+     $value = ceil($price);
+     if ($value < 1000) {
+         return $value." Ꝑ";
+     }
+     else {
+         $formatted_price = number_format($value, 0, '.', ' ')." Ꝑ";
+         return $formatted_price;
+     }
+ }
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -61,7 +71,9 @@ $goods = array(
 
         <nav class="user-menu">
 
-        <!-- здесь должен быть PHP код для показа аватара пользователя -->
+        <!-- здесь PHP код для показа аватара и имени пользователя, либо кнопок "Регистрация" и "Вход,
+         если юзер не авторизован" -->
+
         <?php if ($is_auth == true): ?>
          <div class="user-menu__image">
              <img src=<?=$user_avatar; ?> width="40" height="40" alt="Пользователь">
@@ -88,6 +100,9 @@ $goods = array(
         <h2 class="promo__title">Нужен стафф для катки?</h2>
         <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
         <ul class="promo__list">
+
+            <!-- Отоброжение категорий товаров на сайте -->
+
             <?php foreach ($categories as $key=>$value): ?>
             <li class="promo__item promo__item--<?=$key; ?>">
                 <a class="promo__link" href="all-lots.html"><?=$value; ?></a>
@@ -117,6 +132,9 @@ $goods = array(
             <h2>Открытые лоты</h2>
         </div>
         <ul class="lots__list">
+
+            <!-- Вывод карточек с товарами -->
+
             <?php foreach ($goods as $item): ?>
                     <li class="lots__item lot">
                         <div class="lot__image">
@@ -128,7 +146,7 @@ $goods = array(
                             <div class="lot__state">
                                 <div class="lot__rate">
                                     <span class="lot__amount">Стартовая цена</span>
-                                    <span class="lot__cost"><?= $item['price']; ?><b class="rub">р</b></span>
+                                    <span class="lot__cost"><?= priceFormat($item['price']); ?><!--<b class="rub">р</b>--></span>
                                 </div>
                                 <div class="lot__timer timer">
                                     16:45:32
@@ -144,28 +162,14 @@ $goods = array(
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
+
+            <!-- Отоброжение категорий товаров в footer сайта -->
+
             <?php foreach ($categories as $key=>$value): ?>
             <li class="nav__item">
                 <a href="all-lots.html"><?=$value; ?></a>
             </li>
             <?php endforeach; ?>
-            <!------------------------------------------
-            <li class="nav__item">
-                <a href="all-lots.html">Крепления</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Ботинки</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Одежда</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Инструменты</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Разное</a>
-            </li>
-            -------------------------------------------->
         </ul>
     </nav>
     <div class="main-footer__bottom container">
