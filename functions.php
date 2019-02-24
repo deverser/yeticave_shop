@@ -4,7 +4,7 @@ function renderTemplate($path, $data) {
         return '';
     }
     else {
-        ob_start();
+        ob_start('ob_gzhandler');
         extract($data, EXTR_SKIP);
         include_once($path);
         return ob_get_clean();
