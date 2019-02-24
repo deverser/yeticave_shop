@@ -6,7 +6,7 @@
 
             <!-- Отоброжение категорий товаров на сайте -->
 
-            <li class="promo__item promo__item--attachment">
+            <li class="promo__item promo__item--boards">
                 <a class="promo__link" href="all-lots.html">Доски и лыжи</a>
             </li>
             <li class="promo__item promo__item--attachment">
