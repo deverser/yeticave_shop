@@ -49,7 +49,7 @@
                                     <span class="lot__cost"><?= priceFormat($item['price']); ?><!--<b class="rub">р</b>--></span>
                                 </div>
                                 <div class="lot__timer timer">
-                                    16:45:32
+                                    <?= timeCount(); ?>
                                 </div>
                             </div>
                         </div>
