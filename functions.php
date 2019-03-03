@@ -29,7 +29,7 @@ function priceFormat($price) {
 // функция для вывода времени до начала новых суток в карточке лота
 function timeCount() {
     $ts_midnight = strtotime('tomorrow');
-    $ts = time();
+    $ts = strtotime('now');
     $secs_to_midnight = $ts_midnight - $ts;
     $hrs = floor($secs_to_midnight / 3600);
     $mins = floor(($secs_to_midnight % 3600) / 60);
