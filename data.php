@@ -7,6 +7,7 @@ $bets = [
     ['name' => 'Семён', 'price' => 10000, 'ts' => strtotime('last week')]
 ];
 
+// Список лотов товаров
 $goods = array(
     [
         'name'=>'2014 Rossignol District Snowboard',
