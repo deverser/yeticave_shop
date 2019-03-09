@@ -35,3 +35,8 @@ function timeCount() {
     $mins = floor(($secs_to_midnight % 3600) / 60);
     return $hrs.':'.$mins;
 }
+
+// Функция для форматирования пользовательского ввода от html тегов
+function inputFormat($data) {
+    return htmlspecialchars($data);
+}
