@@ -63,7 +63,7 @@ include_once '../functions.php';
             <tr class="history__item">
               <td class="history__name"><?= $bet['name']; ?></td>
               <td class="history__price"><?= $bet['price']." Ꝑ"; ?></td>
-              <td class="history__time"><?= $bet['ts']; ?></td>
+              <td class="history__time"><?= strftime('%d.%m.%y в %k:%M', $bet['ts']); ?></td>
             </tr>
               <?php endforeach; ?>
 
