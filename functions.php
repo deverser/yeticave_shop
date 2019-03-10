@@ -30,7 +30,7 @@ function priceFormat($price) {
 function timeCount() {
     $ts_midnight = strtotime('tomorrow');
     $ts = strtotime('now');
-    $lot_time_count = gmdate("H:i", $ts_midnight - $ts);
+    $lot_time_count = strftime("%k:%M", $ts_midnight - $ts);
     return $lot_time_count;
 }
 
