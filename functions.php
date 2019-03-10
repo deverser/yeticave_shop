@@ -33,3 +33,8 @@ function timeCount() {
     $lot_time_count = gmdate("H:i", $ts_midnight - $ts);
     return $lot_time_count;
 }
+
+// Функция для форматирования пользовательского ввода от html тегов
+function inputFormat($data) {
+    return htmlspecialchars($data);
+}
