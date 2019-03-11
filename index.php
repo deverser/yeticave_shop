@@ -12,8 +12,11 @@ $categories = array('Доски и лыжи', 'Крепления', 'Ботин�
 
 // Заполняем шаблон страницы контентом
 $page_content = renderTemplate('templates/index.php', ['goods' => $goods]);
-$layout = renderTemplate('templates/layout.php',
-                           ['page_title' => 'Главная', 'is_auth' => $is_auth,
-                            'user_name' => $user_name, 'user_avatar' => $user_avatar,
-                            'page_content' => $page_content, 'categories' => $categories]);
-print($layout);
+$layout = renderTemplate('templates/layout.php', [
+                                'page_title' => 'Главная',
+                                'is_auth' => $is_auth,
+                                'user_name' => $user_name,
+                                'user_avatar' => $user_avatar,
+                                'page_content' => $page_content,
+                                'categories' => $categories]);
+echo $layout;
