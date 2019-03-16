@@ -25,16 +25,7 @@ if (!$lot) {
 }
 
 // Генерируем контент страницы из данных, вставляем в шаблон лота
-$page_content = renderTemplate('templates/lot.php', [
-    'lot' => $lot,
-    'title' => $lot['name'],
-    'category' => $lot['category'],
-    'price' => $lot['price'],
-    'img' => $lot['img'],
-    'lot_dscr' => $lot['description'],
-    'bets' => $bets
-
-]);
+$page_content = renderTemplate('templates/lot.php', ['lot' => $lot, 'bets' => $bets]);
 
 // Вставляем контент в шаблог страницы
 $layout = renderTemplate('templates/layout.php', [
@@ -47,4 +38,4 @@ $layout = renderTemplate('templates/layout.php', [
 ]);
 
 // Выводим страницу
-print($layout);
+echo $layout;
