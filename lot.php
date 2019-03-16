@@ -18,8 +18,6 @@ if (isset($_GET['lot_id'])) {
 // Если лот не существует - выводим страницу 404
 if (!$lot) {
     http_response_code(404);
-    header('HTTP/1.1 404 Not Found');
-    header('Status: 404 Not Found');
     require_once('404.html');
     exit;
 }
