@@ -7,14 +7,11 @@ $lot = null;
 // Данные для лотов берутся из массива $goods
 if (isset($_GET['lot_id'])) {
     $lot_id = $_GET['lot_id'];
-    foreach ($goods as $key => $item) {
-        if ($key == $lot_id) {
-            $lot = $item;
-            break;
-        }
+
+    if (array_key_exists($lot_id, $goods)) {
+        $lot = $goods[$lot_id];
     }
 }
-
 // Если лот не существует - выводим страницу 404
 if (!$lot) {
     http_response_code(404);
